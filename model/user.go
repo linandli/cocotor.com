@@ -5,6 +5,7 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+	"regexp"
 
     _ "github.com/lib/pq"
 )
@@ -35,7 +36,7 @@ type LoginReq struct {
 
 type RegistInfo struct {
 	Name  string `json:"name"`
-	Gender     string `json:"gender"`
+	Gender string `json:"gender"`
 	Phone string `json:"mobile"`
 	Pwd   string `json:"pwd"`
 	Permission string `json:"permission"`
@@ -96,8 +97,11 @@ func LoginCheck(loginReq LoginReq) (bool, User, error) {
 
 // Register 插入用户，先检查是否存在用户，如果没有则存入
 func Register(name string, phone string, pwd string, gender string, permission string) error {
+	if phone == "" {
+		return fmt.Errorf("注册号码不能为空！")
+	}
 	if CheckUser(phone) {
-		return fmt.Errorf("用户已存在！")
+		return fmt.Errorf("用户已存在，请使用未注册的号码注册！")
 	}
 
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
@@ -132,23 +136,30 @@ func Register(name string, phone string, pwd string, gender string, permission s
 
 // CheckUser 检查用户是否存在
 func CheckUser(phone string) bool {
-	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
-        "password=%s dbname=%s sslmode=disable",
-        host, port, user, password, dbname)
-	db, err := sql.Open("postgres", psqlInfo)
-	
-    if err != nil {
-        log.Fatal(err)
-	}
-	
-	defer db.Close()
+	reg := `^1([3456789][0-9])\d{8}$`
+	rgx := regexp.MustCompile(reg)
 
-	res_phone := 0
-	err = db.QueryRow(`SELECT 1 FROM "core"."USER" WHERE "Phone"=$1;`, phone).Scan(&res_phone)
-	
-	if err != nil  {
-		return false
+	if rgx.MatchString(phone) {
+		psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
+			"password=%s dbname=%s sslmode=disable",
+			host, port, user, password, dbname)
+		db, err := sql.Open("postgres", psqlInfo)
+		
+		if err != nil {
+			log.Fatal(err)
+		}
+		
+		defer db.Close()
+
+		res_phone := 0
+		err = db.QueryRow(`SELECT 1 FROM "core"."USER" WHERE "Phone"=$1;`, phone).Scan(&res_phone)
+		
+		if err != nil  {
+			return false
+		} else {
+			return true
+		}
 	} else {
 		return true
-	}
+	}	
 }

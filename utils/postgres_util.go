@@ -11,11 +11,11 @@ import (
 )
 
 const (
-    host     = "localhost"
+    host     = "121.42.160.108"
     port     = 5432
     user     = "postgres"
-    password = "yu226520"
-    dbname   = "cocotor"
+    password = "tuji2013"
+    dbname   = "torch_service"
 )
 type singleton struct{}
 var ins *singleton
