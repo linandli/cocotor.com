@@ -2,8 +2,9 @@ package torch
 
 import (
 	"fmt"
-	"github.com/gin-gonic/gin"
+	"reflect"
 	"net/http"
+	"github.com/gin-gonic/gin"
 	"cocotor.com/utils/torchlib"
 )
 
@@ -15,9 +16,9 @@ func Loads(c *gin.Context) {
 
 	fmt.Println("plantId===========>", plantId)
 	r := torchlib.Get("org/plants", nil, 60)
-	fmt.Println("r------------>", r)
+	fmt.Println("r------------>", reflect.TypeOf(r).String())
 	c.JSON(http.StatusOK, gin.H{
 		"status": 1,
-		"msg": plantId,
+		"msg": r,
 	})
 }

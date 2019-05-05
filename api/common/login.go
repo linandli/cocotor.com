@@ -17,19 +17,21 @@ func Login(c *gin.Context) {
 	var loginReq model.LoginReq
 
 	if c.BindJSON(&loginReq) == nil {
-		log.Println("用户：", loginReq.Phone, "开始登陆！")
+		log.Println("IP:", c.ClientIP(), " 用户：", loginReq.Phone, "开始登陆！")
 		isPass, user, err := model.LoginCheck(loginReq)
 
 		if isPass {
-			log.Println("用户：", loginReq.Phone, "登陆成功！")	
+			log.Println("IP:", c.ClientIP(), "用户：", loginReq.Phone, "登陆成功！")	
 			generateToken(c, user)
 		} else {
+			log.Println("IP:", c.ClientIP(), "用户：", loginReq.Phone, "登录失败！")
 			c.JSON(http.StatusOK, gin.H{
 				"status": -1,
 				"msg": "验证失败," + err.Error(),
 			})
 		}
 	} else {
+		log.Println("IP:", c.ClientIP(), "用户尝试登录数据格式有误！")	
 		c.JSON(http.StatusOK, gin.H{
 			"status": -1,
 			"msg":    "登录数据格式有误",
@@ -41,7 +43,7 @@ func Login(c *gin.Context) {
 // 生成令牌
 func generateToken(c *gin.Context, user model.User) {
 	j := &cocotorjwt.JWT{
-		[]byte("newtrekWang"),
+		[]byte("newtrekTorch"),
 	}
 	claims := cocotorjwt.CustomClaims{
 		user.Id,
@@ -50,7 +52,7 @@ func generateToken(c *gin.Context, user model.User) {
 		jwtgo.StandardClaims{
 			NotBefore: int64(time.Now().Unix() - 1000), // 签名生效时间
 			ExpiresAt: int64(time.Now().Unix() + 3600), // 过期时间 一小时
-			Issuer: "newtrekWang", //签名的发行者
+			Issuer: "newtrekTorch", //签名的发行者
 		},
 	}
 
@@ -69,8 +71,7 @@ func generateToken(c *gin.Context, user model.User) {
 	}
 	c.JSON(http.StatusOK, gin.H{
 		"status": 0,
-		"msg":    "登录成功！",
-		"data":   data,
+		"msg":    data,
 	})
 	return
 }
