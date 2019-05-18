@@ -1,6 +1,7 @@
 package cors
 
 import (
+	"bytes"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -14,6 +15,8 @@ import (
 	"github.com/rifflock/lfshook"
 	"github.com/sirupsen/logrus"
 	"gopkg.in/yaml.v2"
+
+	cocotorjwt "cocotor.com/middleware/jwt"
 )
 
 type conf struct {
@@ -90,6 +93,15 @@ func Cors() gin.HandlerFunc {
 			c.Set("content-type", "application/json")                                                                                                                                                              // 设置返回格式是json
 		}
 
+		data, err := c.GetRawData()
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+
+		postData := string(data)
+		//把读过的字节流重新放到body
+		c.Request.Body = ioutil.NopCloser(bytes.NewBuffer(data))
+
 		//放行所有OPTIONS方法
 		if method == "OPTIONS" {
 			c.JSON(http.StatusOK, "Options Request!")
@@ -107,13 +119,48 @@ func Cors() gin.HandlerFunc {
 		clientIP := c.ClientIP()
 		statusCode := c.Writer.Status()
 		rawQuery := c.Request.URL.RawQuery
-		logClient.Infof("| %3d | %13v | %15s | %s  %s ? %s|",
-			statusCode,
-			latency,
-			clientIP,
-            method, 
-            path,
-			rawQuery,
-		)
+
+		if c.Request.Header.Get("token") != "" {
+			j := &cocotorjwt.JWT{
+				[]byte("newtrekTorch"),
+			}
+
+			claims, err := j.ParseToken(c.Request.Header.Get("token"))
+			if err == nil {
+				phone := claims.Phone
+				name := claims.Name
+				logClient.Infof("| %3d | %13v | %15s | %s  %s ? %s| %s : %s | data: %s |",
+					statusCode,
+					latency,
+					clientIP,
+					method,
+					path,
+					rawQuery,
+					name,
+					phone,
+					postData,
+				)
+			} else {
+				logClient.Infof("| %3d | %13v | %15s | %s  %s ? %s| token: %s |",
+					statusCode,
+					latency,
+					clientIP,
+					method,
+					path,
+					rawQuery,
+					c.Request.Header.Get("token"),
+				)
+			}
+		} else {
+			logClient.Infof("| %3d | %13v | %15s | %s  %s ? %s|  data: %s |",
+				statusCode,
+				latency,
+				clientIP,
+				method,
+				path,
+				rawQuery,
+				postData,
+			)
+		}
 	}
 }

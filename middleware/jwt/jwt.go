@@ -4,6 +4,7 @@ import (
 	"errors"
 	"net/http"
 	"time"
+	// "fmt"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 )
@@ -96,6 +97,7 @@ func (j *JWT) ParseToken(tokenString string) (*CustomClaims, error) {
 	token, err := jwt.ParseWithClaims(tokenString, &CustomClaims{}, func(token *jwt.Token) (interface{}, error) {
 		return j.SigningKey, nil
 	})
+
 	if err != nil {
 		if ve, ok := err.(*jwt.ValidationError); ok {
 			if ve.Errors&jwt.ValidationErrorMalformed != 0 {
@@ -128,8 +130,8 @@ func (j *JWT) RefreshToken(tokenString string) (string, error) {
 		return "", err
 	}
 	if claims, ok := token.Claims.(*CustomClaims); ok && token.Valid {
-		jwt.TimeFunc = time.Now
-		claims.StandardClaims.ExpiresAt = time.Now().Add(1 * time.Hour).Unix()
+		jwt.TimeFunc = time.Now		
+		claims.StandardClaims.ExpiresAt = time.Now().Add(600 * 1000 * time.Millisecond).Unix()
 		return j.CreateToken(*claims)
 	}
 	return "", TokenInvalid
