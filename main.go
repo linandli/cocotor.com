@@ -30,6 +30,8 @@ func main() {
 	torchs.Use(jwt.JWTAuth())
 	{
 		torchs.GET("/plants", torch.AllPlants)
+		torchs.GET("/plant/info", torch.PlantInfo)
+		torchs.GET("/plant/status", torch.PlantStatus)
 	}
 	
 	r.Run(":8080")

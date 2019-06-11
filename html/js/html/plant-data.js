@@ -13,14 +13,12 @@ var getPlants = function() {
     }).then(function(res) {
         if (res) {
             if (res["status"] == 0) {
-                // console.log(res["msg"].length);
-                // console.log(JSON.parse(res["msg"]));
-
                 $.each(JSON.parse(res["msg"]), function(i, item) {
-                    // console.log(item);
-                    console.log(item["name"]);
-                    console.log(item["id"]);
+                    $("#plantsList").append('<option value="{id}">{plant_id} - {name}</option>'
+                        .replace('{id}', item["id"]).replace('{plant_id}', item["id"]).replace('{name}', item["name"]));
+
                 });
+                $('select').comboSelect();
             }
         } else {
             // backLogin();

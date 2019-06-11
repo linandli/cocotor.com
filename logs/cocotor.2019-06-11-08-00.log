@@ -1,0 +1,15 @@
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | OPTIONS  /app/test ? |  data:  |","time":"2019-06-11T13:28:00+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyMGFiMGFlZWY2NjhjMDEzYzUwMmY4MjhjNTJmZmNhYyIsIm5hbWUiOiJhZG1pbjQiLCJwaG9uZSI6IjE3NzkyNTE4NDIwIiwiZXhwIjoxNTYwMTgwMDYyLCJpc3MiOiJuZXd0cmVrVG9yY2giLCJuYmYiOjE1NjAxNzcyNjJ9.vbbOj0akBANULM9jjN7LlIWH52RsHefFIouIJENi5rQ |","time":"2019-06-11T13:28:00+08:00"}
+{"level":"info","msg":"| 200 |    199.4931ms |       127.0.0.1 | POST  /login ? |  data: {\"mobile\":\"17792518420\",\"pwd\":\"yu226520\"} |","time":"2019-06-11T13:28:04+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-11T13:28:04+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-11T13:28:04+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-11T13:28:59+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-11T13:28:59+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-11T13:30:20+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-11T13:30:21+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | OPTIONS  /torch/plants ? |  data:  |","time":"2019-06-11T13:32:09+08:00"}
+{"level":"info","msg":"| 200 |    177.9956ms |       127.0.0.1 | GET  /torch/plants ? | admin4 : 17792518420 | data:  |","time":"2019-06-11T13:32:09+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-11T13:32:24+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-11T13:32:24+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-11T13:32:26+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-11T13:32:26+08:00"}

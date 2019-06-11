@@ -1,0 +1,26 @@
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | OPTIONS  /app/test ? |  data:  |","time":"2019-06-10T20:34:52+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyMGFiMGFlZWY2NjhjMDEzYzUwMmY4MjhjNTJmZmNhYyIsIm5hbWUiOiJhZG1pbjQiLCJwaG9uZSI6IjE3NzkyNTE4NDIwIiwiZXhwIjoxNTU5NjE5NzE5LCJpc3MiOiJuZXd0cmVrVG9yY2giLCJuYmYiOjE1NTk2MTY5MTl9.CSBB-9DDcwJGaSpZDkCDjhsgczv2AZRE1um4RtXWz9k |","time":"2019-06-10T20:34:53+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyMGFiMGFlZWY2NjhjMDEzYzUwMmY4MjhjNTJmZmNhYyIsIm5hbWUiOiJhZG1pbjQiLCJwaG9uZSI6IjE3NzkyNTE4NDIwIiwiZXhwIjoxNTU5NjE5NzE5LCJpc3MiOiJuZXd0cmVrVG9yY2giLCJuYmYiOjE1NTk2MTY5MTl9.CSBB-9DDcwJGaSpZDkCDjhsgczv2AZRE1um4RtXWz9k |","time":"2019-06-10T20:34:53+08:00"}
+{"level":"info","msg":"| 200 |    208.4521ms |       127.0.0.1 | POST  /login ? |  data: {\"mobile\":\"17792518420\",\"pwd\":\"yu226520\"} |","time":"2019-06-10T20:34:54+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-10T20:34:55+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-10T20:34:55+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | OPTIONS  /torch/plants ? |  data:  |","time":"2019-06-10T20:34:57+08:00"}
+{"level":"info","msg":"| 200 |    151.7528ms |       127.0.0.1 | GET  /torch/plants ? | admin4 : 17792518420 | data:  |","time":"2019-06-10T20:34:57+08:00"}
+{"level":"info","msg":"| 200 |    155.5824ms |       127.0.0.1 | GET  /torch/plants ? | admin4 : 17792518420 | data:  |","time":"2019-06-10T20:35:32+08:00"}
+{"level":"info","msg":"| 200 |    144.6431ms |       127.0.0.1 | GET  /torch/plants ? | admin4 : 17792518420 | data:  |","time":"2019-06-10T20:38:38+08:00"}
+{"level":"info","msg":"| 200 |    145.6111ms |       127.0.0.1 | GET  /torch/plants ? | admin4 : 17792518420 | data:  |","time":"2019-06-10T20:39:56+08:00"}
+{"level":"info","msg":"| 200 |    1.9906766s |       127.0.0.1 | GET  /torch/plants ? | admin4 : 17792518420 | data:  |","time":"2019-06-10T20:39:56+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-10T20:40:00+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-10T20:40:00+08:00"}
+{"level":"info","msg":"| 200 |       94.74ms |       127.0.0.1 | GET  /torch/plants ? | admin4 : 17792518420 | data:  |","time":"2019-06-10T20:40:05+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | OPTIONS  /app/test ? |  data:  |","time":"2019-06-10T22:51:01+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyMGFiMGFlZWY2NjhjMDEzYzUwMmY4MjhjNTJmZmNhYyIsIm5hbWUiOiJhZG1pbjQiLCJwaG9uZSI6IjE3NzkyNTE4NDIwIiwiZXhwIjoxNTYwMTcxODk0LCJpc3MiOiJuZXd0cmVrVG9yY2giLCJuYmYiOjE1NjAxNjkwOTR9.xpHUKzo5PqVNz65hbOQdxv6mXlMvT8k9WrBI1ZNJgHI |","time":"2019-06-10T22:51:01+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyMGFiMGFlZWY2NjhjMDEzYzUwMmY4MjhjNTJmZmNhYyIsIm5hbWUiOiJhZG1pbjQiLCJwaG9uZSI6IjE3NzkyNTE4NDIwIiwiZXhwIjoxNTYwMTcxODk0LCJpc3MiOiJuZXd0cmVrVG9yY2giLCJuYmYiOjE1NjAxNjkwOTR9.xpHUKzo5PqVNz65hbOQdxv6mXlMvT8k9WrBI1ZNJgHI |","time":"2019-06-10T22:51:01+08:00"}
+{"level":"info","msg":"| 200 |    244.7474ms |       127.0.0.1 | POST  /login ? |  data: {\"mobile\":\"17792518420\",\"pwd\":\"yu226520\"} |","time":"2019-06-10T22:51:02+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-10T22:51:02+08:00"}
+{"level":"info","msg":"| 200 |       992.8µs |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-10T22:51:02+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | OPTIONS  /torch/plants ? |  data:  |","time":"2019-06-10T22:52:51+08:00"}
+{"level":"info","msg":"| 200 |    140.9268ms |       127.0.0.1 | GET  /torch/plants ? | admin4 : 17792518420 | data:  |","time":"2019-06-10T22:52:51+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-10T22:54:27+08:00"}
+{"level":"info","msg":"| 200 |            0s |       127.0.0.1 | GET  /app/test ? | admin4 : 17792518420 | data:  |","time":"2019-06-10T22:54:27+08:00"}
+{"level":"info","msg":"| 200 |    270.2643ms |       127.0.0.1 | GET  /torch/plants ? | admin4 : 17792518420 | data:  |","time":"2019-06-10T22:54:28+08:00"}
